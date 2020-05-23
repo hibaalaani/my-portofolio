@@ -45,10 +45,10 @@
   &-danger {
     @include set-background($danger-color);
   }
-  // &-white {
-  //   @include set-background($white-color);
-  //   border: #ccc 1px solid;
-  // }
+  &-white {
+    @include set-background($white-color);
+    border: #ccc 1px solid;
+  }
 }
 //Button
 .btn {
