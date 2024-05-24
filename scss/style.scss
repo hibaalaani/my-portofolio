@@ -160,7 +160,7 @@ html {
 
 .landing {
   background: url("../img/developer.jpg") no-repeat center center/cover;
-  height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,6 +176,7 @@ html {
   position: relative;
   bottom: 0;
   width: 100%;
+  padding: 4rem;
 
   .social-links a {
     color: $light-color;
