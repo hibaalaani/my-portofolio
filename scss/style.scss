@@ -1,113 +1,224 @@
+// @import "config";
+// @import "utilities";
+
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
+// body {
+//   font-family: "Raleway", sans-serif;
+//   font-size: 1rem;
+//   line-height: 1.6;
+//   background-color: #ffff;
+
+//   color: #333;
+// }
+// a {
+//   text-decoration: none;
+//   color: $primary-color;
+// }
+// ul {
+//   list-style: none;
+// }
+// img {
+//   width: 100%;
+// }
+// //Navbar
+// .navbar {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 0.7rem 2rem;
+//   position: fixed;
+//   z-index: 1;
+//   width: 100%;
+//   top: 0;
+//   border-bottom: solid 1px $primary-color;
+//   opacity: 0.9;
+//   ul {
+//     display: flex;
+//   }
+//   a {
+//     color: #fff;
+//     padding: 0.45rem;
+//     margin: 0 0.25rem;
+//     &:hover {
+//       color: $primary-color;
+//     }
+//   }
+// }
+// //Landing
+// .landing {
+//   position: relative;
+//   background: url("../img/developer.jpg") no-repeat center center/cover;
+//   height: 100vh;
+//   &-inner {
+//     color: #fff;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     width: 80%;
+//     margin: auto;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//   }
+// }
+// //Profile
+// .profile {
+//   display: grid;
+//   grid-template-columns: 4fr 2fr 2fr;
+//   align-items: center;
+//   justify-content: center;
+//   // text-align: center;
+//   margin: 1rem auto;
+// }
+// .lead {
+//   font-size: 1.5rem;
+//   margin-bottom: 1rem;
+// }
+// /* Profile Page */
+// .profile-grid {
+//   display: grid;
+//   grid-template-areas:
+//     "top top"
+//     "about about"
+//     "exp edu"
+//     "github github";
+//   grid-gap: 1rem;
+//   bottom: 0;
+// }
+
+// .profile-top {
+//   grid-area: top;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+// }
+
+// .profile-top img {
+//   width: 250px;
+// }
+
+// .profile-top .icons a {
+//   color: #fff;
+//   margin: 0 0.3rem;
+// }
+
+// .profile-top .icons a:hover {
+//   color: var(--dark-color);
+// }
+
+// Import variables and mixins
 @import "config";
 @import "utilities";
 
-* {
-  box-sizing: border-box;
+body,
+html {
   margin: 0;
   padding: 0;
-}
-body {
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: #ffff;
- 
   color: #333;
+  background-color: #f4f4f4;
 }
-a {
-  text-decoration: none;
-  color: $primary-color;
-}
-ul {
-  list-style: none;
-}
-img {
-  width: 100%;
-}
-//Navbar
+
 .navbar {
+  background-color: $dark-color;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
+  padding: 1rem 2rem;
+  position: sticky;
   top: 0;
-  border-bottom: solid 1px $primary-color;
-  opacity: 0.9;
-  ul {
-    display: flex;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  .logo {
+    color: $light-color;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
-  a {
-    color: #fff;
-    padding: 0.45rem;
-    margin: 0 0.25rem;
+
+  .nav-links a {
+    color: $light-color;
+    padding: 0.75rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
     &:hover {
       color: $primary-color;
     }
   }
 }
-//Landing
+
 .landing {
-  position: relative;
   background: url("../img/developer.jpg") no-repeat center center/cover;
   height: 100vh;
-  &-inner {
-    color: #fff;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-}
-//Profile
-.profile {
-  display: grid;
-  grid-template-columns: 4fr 2fr 2fr;
-  align-items: center;
-  justify-content: center;
-  // text-align: center;
-  margin: 1rem auto;
-}
-.lead {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-/* Profile Page */
-.profile-grid {
-  display: grid;
-  grid-template-areas:
-    "top top"
-    "about about"
-    "exp edu"
-    "github github";
-  grid-gap: 1rem;
-  bottom: 0;
-}
-
-.profile-top {
-  grid-area: top;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.profile-top img {
-  width: 250px;
-}
-
-.profile-top .icons a {
   color: #fff;
-  margin: 0 0.3rem;
 }
 
-.profile-top .icons a:hover {
-  color: var(--dark-color);
+.footer {
+  background-color: $dark-color;
+  color: $light-color;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
+  .social-links a {
+    color: $light-color;
+    margin: 0 10px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Navbar Styles
+.navbar {
+  width: 100%;
+  background-color: $dark-color;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+
+  &.scrolled {
+    background-color: rgba($dark-color, 0.7); // Semi-transparent when scrolled
+    padding: 0.5rem 2rem;
+  }
+
+  a {
+    color: $light-color;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+
+    li {
+      margin: 0 10px;
+    }
+  }
 }
